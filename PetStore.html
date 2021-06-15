@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title> Pet Store </title>
+    <style>
+            
+         html {
+        border-top: 5px solid #fff;
+        background: #f9f9f9;
+    }
+    #slider {
+        position: relative;
+        overflow: hidden;
+        margin: 20px auto 0 auto;
+        border-radius: 4px;
+    }
+    #slider ul {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        height: 100px;
+        list-style: none;
+    }
+    #slider ul li {
+        position: relative;
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 0;
+        width: 1350px;
+        height: 300px;
+        background: #ffc72b;
+        text-align: center;
+        line-height: 300px;
+    }
+    a.control_prev, a.control_next {
+        position: absolute;
+        top: 40%;
+        z-index: 999;
+        display: block;
+        padding: 4% 3%;
+        width: auto;
+        height: auto;
+        background: #2a2a2a;
+        color: #ffc72b;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+    a.control_prev:hover, a.control_next:hover {
+        opacity: 1;
+        -webkit-transition: all 0.2s ease;
+    }
+    a.control_prev {
+        border-radius: 0 2px 2px 0;
+    }
+    a.control_next {
+        right: 0;
+        border-radius: 2px 0 0 2px;
+    }
+    .slider_option {
+        position: relative;
+        margin: 10px auto;
+        width: 160px;
+        font-size: 18px;
+    }
+     nav#menu1{
+        background-color: #ffc72b;
+        width: 1320px;
+        height: 115px;
+    }
+    tr{
+     font-family: arial;
+     font-size : 20px;
+    }
+    h2{
+     font-family: arial;
+     font-size: 30px;
+    }
+    h3{
+        font-family: arial;
+        font-size: 25px;
+    }
+    nav#menu1{
+        background-color: #FFC504;
+        width: 1349px;
+        height: 115px;
+        text-align: center;
+    }
+    nav imput{
+        position: relative;
+        top: 15px;
+        left: 510px;
+    }
+    *{margin: 0; padding: 0;}
+
+body{
+font-family: arial, helvetica, sans-serif;
+font-size: 3px;
+}
+
+.menu2{
+list-style:none;
+border:1px solid #C0C0C0;
+float:left;
+font-size: 12px;
+}
+.menu2 li{
+position:relative;
+float:left;
+border-right:1px solid #c0c0c0;
+}
+.menu2 li a{color:#333; text-decoration:none; padding:3px 10.1px; display:block;}
+
+.menu2 li a:hover{
+background:#ffc72b;
+color:#fff;
+-moz-box-shadow:0 3px 10px 0 #CCC;
+-webkit-box-shadow:0 3px 10px 0 #ccc;
+text-shadow:0px 0px 5px #fff;
+}
+.menu2 li  ul{
+position:absolute;
+top:25px;
+left:0;
+background-color:#fff;
+display:none;
+}
+.menu2 li:hover ul, .menu2 li.over ul{display:block;}
+.menu2 li ul li{
+border:1px solid #c0c0c0;
+display:block;
+width:15px;
+}
+    body{
+         text-align: center;
+         top: 10px;
+         left: 30px;
+         }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: #FFFFFF; 
+    }
+    .pesquisa{
+        width: 400px;
+        height: 40px;
+        margin: 40px auto;
+
+    }
+    #texto{
+        width: 350px;
+        height: 40px;
+        font-family: "arial";
+        font-size : 20px;
+        float: left;
+    }
+    .btn{
+     width: 30px;
+     height: 30px;
+     background-color: #000000;
+     padding: 5px 10px;
+     cursor: pointer;
+    }
+    #texto:focus{
+    border: solid 2px #2f4550;
+    }
+        <script>
+        body{
+font-family: arial, helvetica, sans-serif;
+font-size: 30px;
+}
+
+ .bt {
+border:1px solid #ffc72b;
+border-radius:4px;
+display:inline-block;
+cursor:pointer;
+font-family:Verdana;
+font-weight:bold;
+font-size:13px;
+padding:6px 10px;
+text-decoration:none;
+} 
+
+.bt-lj {
+border-color:#ffc72b;
+background:linear-gradient(to bottom, #ffc72b 5%, #ffc72b 100%);
+box-shadow:inset 0px 1px 0px 0px #fdf7f0;
+color:#333;
+text-shadow:0px 1px 0px #ffc72b;
+}
+
+.bt-lj:hover {
+background:linear-gradient(to bottom, #ffc72b 5%, #ffc72b 100%);
+}
+
+.bt:active {
+position:relative;
+top:2px;}
+ a#href{
+      font-family: arial;
+    }
+    td{
+      font-size: 20px;
+    }
+    
+    div#qs{
+    font-size: 18px;
+    text-align: center;
+    }
+    div#copyright{
+    font-size: 12px;
+    text-align: center;
+    }
+    div#cadastro{
+        font-size: 28px;
+        text-align: center;
+    }
+    h5{
+        font-size: 28px;
+        text-align: center;
+    }
+    div#conferir{
+        font-size: 28px;
+        text-align: center;
+    }
+    div#pet{
+        font-size: 28px;
+        text-align: center;
+    }
+    div#pagamento{
+        font-size: 28px;
+        text-align: center;
+
+    }
+    body{
+font-family: arial, helvetica, sans-serif;
+font-size: 30px;
+}
+.menu{
+list-style:none;
+border:5px solid #ffc72b;
+float:left;
+}
+.menu li{
+position:relative;
+float:left;
+border-right:5px solid #ffc72b;
+}
+.menu li a{color:#333; text-decoration:none; padding:5px 10px; display:block;}
+
+.menu li a:hover{
+background:#;
+color:#fff;
+-moz-box-shadow:0 3px 10px 0 #CCC;
+-webkit-box-shadow:0 3px 10px 0 #ccc;
+text-shadow:0px 0px 5px #fff;
+}
+.menu li  ul{
+position:absolute;
+top:25px;
+left:0;
+background-color:#fff;
+display:none;
+}
+.menu li:hover ul, .menu li.over ul{display:block;}
+.menu li ul li{
+border:1px solid #c0c0c0;
+width:150px;
+}
+h1{
+    font-size:35px;
+    text-align: center;
+}
+h2{
+    font-size:25px;
+    text-align: center;
+}
+tr{
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+   <div id = "pet">
+<h2>O melhor pet shop online do Brasil!</h2>
+</div>
+    <nav id = "menu1">
+        <img src = "C:\Users\Usuário\Desktop\Site\bannerpetstore2.png" width = 400 height = 115\>
+   <imput type = "text" name = "caixa1">
+    </nav> 
+    
+  <ul class="menu2">
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/menus/m1.html">Cachorros</a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/m2.html">Gatos</a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/m3.html">Outros pets</a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/m7.html">Lançamentos</a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/m8.html">Acessórios</a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/m9.html">Promoções</a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/m10.html">Medicamentos</a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/m11.html">Quem somos</a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/m12.html">Marcas</a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/m13.html">Diversão</a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/m14.html">Alimentação</a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/m15.html">Frete grátis</a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/m17.html">Higiene</a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/m18.html">Nosso contato</a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/m21.html">Realizar cadastro</a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/m20.html">Ir para o carrinho</a></li>
+</ul>
+
+</br>
+<form class = "pesquisa">
+        <input type = "search" id = "texto" list= "historico" placeholder = "O que você deseja?">
+        <img src = "C:\Users\Usuário\Desktop\Site\lupasite.jpg" class = "btn" width = 50 height = 40>
+        <datalist id = "historico">
+            <option value = "Brinquedos"></option>
+            <option value = "Acessórios"></option>
+            <option value = "Rações"></option>
+        </datalist>
+    </form>
+</script>
+    <div id="slider">
+    <a href="#" class="control_next">></a>
+    <a href="#" class="control_prev"><</a>
+    <ul>
+        <li>
+            
+            <center><a href = "file:///C:/Users/Usu%C3%A1rio/Desktop/m9.html"><img src="C:\Users\Usuário\Desktop\Site\banner32.png" widht = 900 height = 300/></a></center>
+            
+        </li>
+        <li>
+            
+                <center><a href = "file:///C:/Users/Usu%C3%A1rio/Desktop/m17.html"><img src="C:\Users\Usuário\Desktop\Site\banner2ofcial.png" widht = 900 height = 300/></a></center>
+            
+        </li>
+        <li>
+            
+               <center><a href = "file:///C:/Users/Usu%C3%A1rio/Desktop/m10.html"> <img src="C:\Users\Usuário\Desktop\Site\banner5.png" widht = 900 height = 300/></a></center>
+           
+        </li>
+        <li>
+            
+                <center><a href = "file:///C:/Users/Usu%C3%A1rio/Desktop/m15.html"><img src="C:\Users\Usuário\Desktop\Site\banner9.png" width = 900 height = 300/></a></center>
+           
+        </li>
+        <li>
+            
+                <center><a href = "file:///C:/Users/Usu%C3%A1rio/Desktop/m14.html"><img src="C:\Users\Usuário\Desktop\Site\banner7.png" width = 900 height = 300/></a></center>
+           
+        </li>
+         <li>
+            
+                <center><a href = ""><img src="C:\Users\Usuário\Desktop\Site\banneroficial10.png" width = 900 height = 300/></a></center>
+           
+        </li>
+    </ul>
+</div>
+
+<script>
+    $(function() {
+    $('#checkbox').change(function () {
+        setInterval(function () {
+            moveRight();
+        }, 3000);
+    });
+    var slideCount = $('#slider ul li').length;
+    var slideWidth = $('#slider ul li').width();
+    var slideHeight = $('#slider ul li').height();
+    var sliderUlWidth = slideCount * slideWidth;
+    $('#slider').css({
+        width: slideWidth,
+        height: slideHeight
+    });
+    $('#slider ul').css({
+        width: sliderUlWidth,
+        marginLeft: -slideWidth
+    });
+    $('#slider ul li:last-child').prependTo('#slider ul');
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: +slideWidth
+        }, 200, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+    function moveRight() {
+        $('#slider ul').animate({
+            left: -slideWidth
+        }, 200, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+});
+</script>
+</br>
+<h1>Nossos Produtos</h1>
+</br>
+<hr size = 1; width= 100%>
+</br>
+<h2>Brinquedos</h2>
+</br>
+<ul class="menu">
+  
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/b6informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\b6.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/b7informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\b7.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/b18informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\b18.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/b12informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\b12.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/b3informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\b3.png" width = "242px" height = "440px"></a></li>
+        
+        
+</ul>
+<ul class="menu">
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/b1informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\b1.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/b2informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\b2.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/b14informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\b14.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/b4informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\b4.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/b17informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\b17.png" width = "242px" height = "440px"></a></li>
+        
+        
+</ul>
+<ul class="menu">
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/b11informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\b11.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/b5informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\b5.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/b13informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\b13.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/b16informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\b16.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/b15informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\b15.png" width = "242px" height = "440px"></a></li>
+        
+        
+</ul>
+<hr size = 1; width= 100%; color = "white">
+</br>
+<h2>Acessórios</h2>
+</br>
+<ul class="menu">
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/a12informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\a12.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/a4informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\a4.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/a10informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\a10.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/a6informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\a6.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/a13informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\a13.png" width = "242px" height = "440px"></a></li>
+        
+        
+</ul>
+<ul class="menu">
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/a9informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\a9.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/a11informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\a11.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/a5informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\a5.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/a7informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\a7.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/a152informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\a152.png" width = "242px" height = "440px"></a></li>
+        
+        
+</ul>
+<ul class="menu">
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/a3informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\a3.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/a1informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\a1.png" width = "242px" height = "440px"></a></li>
+         <li><a href = "file:///C:/Users/Usu%C3%A1rio/Desktop/Site/a8informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\a8.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/a14informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\a14.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/a2informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\a2.png" width = "242px" height = "440px"></a></li>
+        </ul>
+        <hr size = 1; width= 100%; color = "white">
+</br>
+<h2>Medicamentos</h2>
+</br>
+<ul class="menu">
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/r1informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\r1.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/r7informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\r7.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/r9informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\r9.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/r3informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\r3.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/r11informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\r11.png" width = "242px" height = "440px"></a></li>
+        
+        
+</ul>
+<ul class="menu">
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/r12informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\r12.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/r6informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\r6.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/r10informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\r10.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/r13informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\r13.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/r8informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\r8.png" width = "242px" height = "440px"></a></li>
+        
+        
+</ul>
+<hr size = 1; width= 100%; color = "white">
+</br>
+<h2>Alimentação</h2>
+</br>
+<ul class="menu">
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/c3informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\c3.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/c1informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\c1.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/c9informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\c9.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/c4informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\c4.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/c6informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\c6.png" width = "242px" height = "440px"></a></li>
+        
+        
+</ul>
+<ul class="menu">
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/c2informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\c2.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/c5informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\c5.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/c8informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\c8.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/c10informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\c10.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/c7informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\c7.png" width = "242px" height = "440px"></a></li>
+        
+        
+</ul>
+<hr size = 1; width= 100%; color = "white">
+</br>
+<h2>Higiene</h2>
+</br>
+<ul class="menu">
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/h3informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\h3.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/h1informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\h1.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/h9informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\h9.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/h4informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\h4.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/h6informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\h6.png" width = "242px" height = "440px"></a></li>
+        
+        
+</ul>
+<ul class="menu">
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/h2informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\h2.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/h5informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\h5.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/h8informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\h8.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/h10informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\h10.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/h7informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\h7.png" width = "242px" height = "440px"></a></li>
+        
+        
+</ul>
+<hr size = 1; width= 100%; color = "white">
+</br>
+<h2>Produtos em Promoção</h2>
+</br>
+<ul class="menu">
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/p1informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\p1.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/p2informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\p2.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/p3informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\p3.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/p4informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\p4.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/p5informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\p5.png" width = "242px" height = "440px"></a></li>
+        
+        
+</ul>
+<hr size = 1; width= 100%; color = "white">
+</br>
+<h2>Lançamentos</h2>
+</br>
+<ul class="menu">
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/l1informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\l1.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/l2informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\l2.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/l3informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\l3.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/l4informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\l4.png" width = "242px" height = "440px"></a></li>
+        <li><a href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/l5informa%C3%A7%C3%B5es.html"><img src ="C:\Users\Usuário\Desktop\Site\l5.png" width = "242px" height = "440px"></a></li>
+        
+        
+</ul>
+<hr size = 1; width= 100%; color = "white">
+
+</br>
+<div id = "cadastro">
+<h3>Cadastre-se no nosso site e receba em primeira mão as novidades e ofertas!</h3>
+</br>
+</div>
+<center>
+<table>
+   <tr>
+   <center><td>Nome Completo:</td>
+   <td><input type="text" name="nome completo" size="40"> <br /></td>
+ </tr>
+ <tr>
+   <td>E-mail do usuário:</td>
+   <td><input type="text" name="e-mail" size="40"> <br /></td>
+ </tr>
+ <tr>
+   <td>Senha do usuário:</td>
+  <td><input type="password" name="senha" id="senha" size="40"> <br />
+    <imput type = "checkbox" onclick = "OcultarSenha()">
+      <script type = "text/javascript" src = "scripts.js"></script></td></center>
+  </tr>
+    <form>
+ </tr>
+</table>
+</center>
+</br>
+<center><a class="bt bt-lj" href="file:///C:/Users/Usu%C3%A1rio/Desktop/cadastrofinalizado.html">Finalizar Cadastro</a></center>
+</form>
+</center>
+</br>
+<hr size = 1; width= 100%>
+</br>
+<div id = "pagamento">
+<center><h3>Formas de Pagamento</h3></center>
+</div>
+</br>
+<center><img src = "C:\Users\Usuário\Desktop\Site\pagamento.png" width = "900" height = "200"></center>
+</br>
+<hr size = 1; width= 100%>
+<td>
+</br>
+<div id = "desconto">
+<h3> <center> Ganhe 10% de desconto na sua 1ª compra!</center></h3>
+        </br>
+         </div>
+    </br>
+        <center><a class="bt bt-lj" href="file:///C:/Users/Usu%C3%A1rio/Desktop/Site/desconto1compra.html">Aplicar Desconto</a></center>
+</br>
+    <hr size = 1; width= 100%;>
+</br>
+<img src = "C:\Users\Usuário\Desktop\Site\produtos.png" width = "1000" height = "320">
+</br>
+ <hr size = 1; width= 100%;>
+</br>
+  <center><h3>Quem é a Pet Store?</h3></center>
+</br>
+  <div id = "qs">
+      <center><h15>A Pet Store é uma loja virtual especializada em oferecer os melhores produtos para o seu pet,</h15></center>
+      <center><h8>uma vez que preza, de modo essencial, pela qualidade na prestação de serviços, e é por isso</h8></center>
+      <center><h8>que já conquistou o coração de inúmeros clientes. Venha para a Pet Store você também! :)</h8></center>
+    </br>
+    </div>
+    <hr size = 1; width= 100%>
+</br>
+    <div id = "copyright">
+     Copyright 2021 - Todos os direitos reservados à Pet Store
+   </div>
+</td>
+<a href="https://api.whatsapp.com/send?phone=88998089208&text=Texto%20aqui"
+    target="_blank"
+    style="position:fixed;bottom:20px;right:30px;">
+    <svg enable-background="new 0 0 512 512" width="50" height="50" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M256.064,0h-0.128l0,0C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104  l98.4-31.456C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z" fill="#4CAF50"/><path d="m405.02 361.5c-6.176 17.44-30.688 31.904-50.24 36.128-13.376 2.848-30.848 5.12-89.664-19.264-75.232-31.168-123.68-107.62-127.46-112.58-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624 26.176-62.304c6.176-6.304 16.384-9.184 26.176-9.184 3.168 0 6.016 0.16 8.576 0.288 7.52 0.32 11.296 0.768 16.256 12.64 6.176 14.88 21.216 51.616 23.008 55.392 1.824 3.776 3.648 8.896 1.088 13.856-2.4 5.12-4.512 7.392-8.288 11.744s-7.36 7.68-11.136 12.352c-3.456 4.064-7.36 8.416-3.008 15.936 4.352 7.36 19.392 31.904 41.536 51.616 28.576 25.44 51.744 33.568 60.032 37.024 6.176 2.56 13.536 1.952 18.048-2.848 5.728-6.176 12.8-16.416 20-26.496 5.12-7.232 11.584-8.128 18.368-5.568 6.912 2.4 43.488 20.48 51.008 24.224 7.52 3.776 12.48 5.568 14.304 8.736 1.792 3.168 1.792 18.048-4.384 35.52z" fill="#FAFAFA"/></svg>
+</body>
+</html>
